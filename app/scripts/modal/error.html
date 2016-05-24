@@ -1,0 +1,18 @@
+<div class="modal animated fadeIn" ng-show="errors.message && !errors.global && errors.show" ng-class="{'fadeOut': !errors.show }">
+  <div class="modal-dialog animated" ng-show="errors.message && !errors.global && errors.show" ng-class="{'vanishOut': !errors.show, vanishIn: errors.show }">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" ng-click="close()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">{{lcTitle}}</h4>
+      </div>
+      <div class="modal-body">
+        <p>{{errors.message}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="close()">Okay</button>
+      </div>
+    </div>
+  </div>
+</div>

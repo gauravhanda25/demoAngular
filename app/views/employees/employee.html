@@ -1,0 +1,48 @@
+<div id="Employee" class="container" >
+  <div class="row" ng-hide="formVisible">
+    <div class="row addBtn">
+      <input type="button" value="Add Employee" class="pull-right btn" ng-click="formVisible = !formVisible; mode='Add'">
+    </div>
+    <div class="row heading">
+      <div class="col-md-2">
+        <h3>Username</h3>
+      </div>
+      <div class="col-md-2">
+        <h3>Name</h3>
+      </div>
+        <div class="col-md-2">
+        <h3>Email</h3>
+      </div>
+      <div class="col-md-6 text-center">
+        
+      </div>
+    </div>
+    <div class="row list-row" ng-if="employees.length" ng-repeat="employee in employees">
+      <div class="col-md-2">{{employee.userName | uppercase}}</div>
+      <div class="col-md-2">{{employee.firstName | uppercase}} {{ employee.lastName | uppercase}}</div>
+      <div class="col-md-2">{{employee.email}}</div>
+      <div class="col-md-6 text-center">
+        <button type="button" class="btn btn-sm" aria-label="Left Align" ng-click="showDeleteConfirmation($event, employee)">
+          Delete <span class="glyphicon glyphicon-align-left glyphicon-remove-sign" aria-hidden="true"></span>
+        </button>
+        <button type="button" class="btn btn-sm" aria-label="Left Align" ng-click="editEmployee(employee);">
+          Edit <span class="glyphicon glyphicon-align-left glyphicon-edit" aria-hidden="true"></span>
+        </button>
+        <button type="button" class="btn btn-sm" aria-label="Left Align" ng-click="editEmployee(Employee);">
+          Details <span class="glyphicon glyphicon-align-left glyphicon-edit" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+    <div ng-show="!employees.length">
+        <div class="col-md-12">
+            No Record Found...
+        </div>  
+    </div>  
+  </div>
+  <mc-modal lc-title="Notice" errors="viewport.$errors" show="showConfirmation" template="confirmDelete" callback="showDeleteConfirmationCallback" mode="employee"></mc-modal>  
+  <div class="row" ng-show="formVisible">
+    <mc-add-Employee display="formVisible" empval="empval" mode="mode" employees="employees"></mc-add-Employee>
+  </div>
+</div>
+
+

@@ -1,0 +1,22 @@
+<div id="wrapper">
+
+  <!-- Sidebar -->
+  <div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <a href="#">
+          <h1 id="sidebarH1">Mobcat</h1>
+        </a>
+      </li>
+      <li ng-class="{'active':selectedTab === 'categories'}" ng-click="selectedTab = 'categories'">
+        <a href="#/categories">Categories</a>
+      </li>
+      <li ng-class="{'active':selectedTab === 'products'}" ng-click="selectedTab = 'products'">
+        <a href="#/products">Products</a>
+      </li>
+      <li ng-class="{'active':selectedTab === 'employees'}" ng-click="selectedTab = 'employees'">
+        <a href="#/employees">Employees</a>
+      </li>
+    </ul>
+  </div>
+

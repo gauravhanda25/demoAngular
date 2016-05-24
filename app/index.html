@@ -1,0 +1,96 @@
+<!doctype html>
+<html ng-app="inventory1App">
+
+<head>
+  <meta charset="utf-8">
+  <title ng-bind="'MobCat | ' + title"></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/angular-flash/dist/angular-flash.css" />
+  <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+</head>
+
+<body >
+  <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <div class="row" mc-viewport>
+    <div class="col-md-2">
+      <div ng-include="'views/sections/sidebar.html'"></div>
+    </div>
+    <div class="col-md-10 main-section">
+        <div flash-message="3000" ></div> 
+      <div ng-include="'views/sections/header.html'"></div>
+      <div class="container" ng-if="viewport.$errors.message && viewport.$errors.global">
+        <div class="alert alert-danger animated fadeIn error text-center" ng-cloak>{{viewport.$errors.message}}</div>
+      </div>
+      <div id="content" ng-view=""></div>
+    </div>
+  </div>
+
+  <mc-modal lc-title="Error" errors="viewport.$errors" template="error"></mc-modal>
+    
+
+
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+  <script>
+    ! function(A, n, g, u, l, a, r) {
+      A.GoogleAnalyticsObject = l, A[l] = A[l] || function() {
+        (A[l].q = A[l].q || []).push(arguments)
+      }, A[l].l = +new Date, a = n.createElement(g),
+      r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+    }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+  </script>
+
+  <!-- build:js(.) scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="bower_components/angular-touch/angular-touch.js"></script>
+  <script src="bower_components/angular-flash/dist/angular-flash.js"></script>
+  <script src="bower_components/ngStorage/ngStorage.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:js({.tmp,app}) scripts/scripts.js -->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/viewport.js"></script>
+  <script src="scripts/api/api.js"></script>
+  <script src="scripts/api/config.js"></script>
+  <script src="scripts/modal/modal.js"></script>
+  <script src="scripts/helpers/loader.js"></script>
+  <script src="scripts/errors/errors.js"></script>
+  <script src="scripts/controllers/main.js"></script>
+  <script src="scripts/controllers/product.js"></script>
+  <script src="scripts/controllers/login.js"></script>
+  <script src="scripts/controllers/category.js"></script>
+  <script src="scripts/directives/addCategory.js"></script>
+  <script src="scripts/directives/addEmployee.js"></script>
+  <script src="scripts/directives/addProduct.js"></script>
+  <script src="scripts/controllers/employee.js"></script>
+  <!-- endbuild -->
+</body>
+
+</html>
+

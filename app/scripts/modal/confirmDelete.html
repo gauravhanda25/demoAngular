@@ -1,0 +1,16 @@
+<div class="modal animated fadeIn" ng-show="show" ng-class="{'fadeOut': !show }">
+  <div class="modal-dialog animated" ng-show="show" ng-class="{'vanishOut': !show, vanishIn: show }">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Are you sure?</h4>
+      </div>
+      <div class="modal-body">
+        <p>Deleting this {{mode}} will remove it permanently.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="callback()(false)">Cancel</button>
+        <button type="button" class="btn btn-default" ng-click="callback()(true)">Continue</button>
+      </div>
+    </div>
+  </div>
+</div>

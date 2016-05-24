@@ -1,0 +1,50 @@
+<div class="container">
+  <h1>{{mode}} Employee</h1>
+  <hr>
+  <form name="employeeForm" class="form-horizontal" ng-submit="submit(employeeForm)"  novalidate>
+    <div class="form-group">
+      <label class="control-label col-sm-2">Username :</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" name="userName" ng-model="empval.userName" placeholder="Enter Username..." required value='{{empval.userName}}'>
+          <p ng-show="employeeForm.userName.$invalid && employeeForm.userName.$touched" class="help-block">Name is required.</p>
+      </div>
+    </div>
+    
+      <div class="form-group">
+      <label class="control-label col-sm-2">First Name :</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" name="firstName" ng-model="empval.firstName" placeholder="Enter First Name..." required value='{{empval.firstName}}'>
+          <p ng-show="employeeForm.firstName.$invalid && employeeForm.firstName.$touched" class="help-block">Name is required.</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2">Last Name :</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" name="lastName" ng-model="empval.lastName" placeholder="Enter Last Name..." required value='{{empval.lastName}}'>
+          <p ng-show="employeeForm.lastName.$invalid && employeeForm.lastName.$touched" class="help-block">Last Name is required.</p>
+      </div>
+    </div>
+      <div class="form-group">
+      <label class="control-label col-sm-2">Email :</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" name="email" ng-model="empval.email" placeholder="Enter email..." required value='{{empval.email}}'>
+          <p ng-show="employeeForm.email.$invalid && employeeForm.email.$touched" class="help-block">Last Name is required.</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2">Mobile :</label>
+      <div class="col-sm-6">
+          <input type="text" class="form-control" name="mobile" ng-model="empval.mobile" placeholder="Enter mobile..." required value='{{empval.mobile}}'>
+          <p ng-show="employeeForm.mobile.$invalid && employeeForm.mobile.$touched" class="help-block">Description is required.</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <input type="hidden" ng-model="empval.id" name="catid">
+        <button type="submit" class="btn" ng-disabled="employeeForm.$invalid" lc-loading="addemployee.addemployeePromise">{{mode}}</button>
+        <button type="button" class="btn" ng-click="cancel();">Cancel</button>
+      </div>
+    </div>
+  </form>
+</div>
+

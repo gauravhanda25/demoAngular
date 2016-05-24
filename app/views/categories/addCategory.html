@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>{{mode}} Category</h1>
+  <hr>
+  <form name="categoryForm" class="form-horizontal" ng-submit="submit(categoryForm)"  novalidate>
+    <div class="form-group">
+      <label class="control-label col-sm-2">Name :</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" name="name" ng-model="catval.name" placeholder="Enter Name..." required value='{{catval.name}}'>
+          <p ng-show="categoryForm.name.$invalid && categoryForm.name.$touched" class="help-block">Name is required.</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2">Description :</label>
+      <div class="col-sm-6">
+          <textarea class="form-control" name="desc" ng-model="catval.description" required>{{catval.description}}</textarea>
+          <p ng-show="categoryForm.desc.$invalid && categoryForm.desc.$touched" class="help-block">Description is required.</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <input type="hidden" ng-model="catval.id" name="catid">
+        <button type="submit" class="btn" ng-disabled="categoryForm.$invalid" lc-loading="addCategory.addCategoryPromise">{{mode}}</button>
+        <button type="button" class="btn" ng-click="cancel();">Cancel</button>
+      </div>
+    </div>
+  </form>
+</div>
+
